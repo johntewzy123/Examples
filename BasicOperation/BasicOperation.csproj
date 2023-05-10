@@ -1,0 +1,509 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{92F5E873-6653-403B-90F3-4A5D572542F7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BasicOperation</RootNamespace>
+    <AssemblyName>BasicOperation</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="atid.lib, Version=1.0.0.7, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Lib\Windows\dotNetFramework\atid.lib.dll</HintPath>
+    </Reference>
+    <Reference Include="atid.lib.atx88, Version=1.0.0.8, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Lib\Windows\dotNetFramework\atid.lib.atx88.dll</HintPath>
+    </Reference>
+    <Reference Include="atid.lib.module.barcode, Version=1.0.0.6, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Lib\Windows\dotNetFramework\atid.lib.module.barcode.dll</HintPath>
+    </Reference>
+    <Reference Include="atid.lib.module.rfid.hf, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Lib\Windows\dotNetFramework\atid.lib.module.rfid.hf.dll</HintPath>
+    </Reference>
+    <Reference Include="atid.lib.module.rfid.uhf, Version=1.0.0.7, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Lib\Windows\dotNetFramework\atid.lib.module.rfid.uhf.dll</HintPath>
+    </Reference>
+    <Reference Include="atid.lib.reader, Version=1.0.0.4, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Lib\Windows\dotNetFramework\atid.lib.reader.dll</HintPath>
+    </Reference>
+    <Reference Include="atid.lib.transport, Version=1.0.0.8, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Lib\Windows\dotNetFramework\atid.lib.transport.dll</HintPath>
+    </Reference>
+    <Reference Include="atid.lib.util, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Lib\Windows\dotNetFramework\atid.lib.util.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Access.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Access.Designer.cs">
+      <DependentUpon>Access.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Access.EventListener.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataListItem.cs" />
+    <Compile Include="Dialog\BarcodeOption\GeneralOption.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\BarcodeOption\GeneralOption.Designer.cs">
+      <DependentUpon>GeneralOption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\BarcodeOption\Honeywell\OptionCodabarDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\BarcodeOption\Honeywell\OptionCodabarDialog.designer.cs">
+      <DependentUpon>OptionCodabarDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\BarcodeOption\Honeywell\OptionCode128Dialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\BarcodeOption\Honeywell\OptionCode128Dialog.designer.cs">
+      <DependentUpon>OptionCode128Dialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\BarcodeOption\Honeywell\OptionCode39Dialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\BarcodeOption\Honeywell\OptionCode39Dialog.designer.cs">
+      <DependentUpon>OptionCode39Dialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\BarcodeOption\Honeywell\OptionCode93Dialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\BarcodeOption\Honeywell\OptionCode93Dialog.designer.cs">
+      <DependentUpon>OptionCode93Dialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\BarcodeOption\Honeywell\OptionCompositeDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\BarcodeOption\Honeywell\OptionCompositeDialog.designer.cs">
+      <DependentUpon>OptionCompositeDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\BarcodeOption\Honeywell\OptionI2of5Dialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\BarcodeOption\Honeywell\OptionI2of5Dialog.designer.cs">
+      <DependentUpon>OptionI2of5Dialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\BarcodeOption\Honeywell\OptionPdf417Dialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\BarcodeOption\Honeywell\OptionPdf417Dialog.designer.cs">
+      <DependentUpon>OptionPdf417Dialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\BarcodeOption\Honeywell\OptionPostalCodeDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\BarcodeOption\Honeywell\OptionPostalCodeDialog.Designer.cs">
+      <DependentUpon>OptionPostalCodeDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\BarcodeOption\Honeywell\OptionUpcEanDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\BarcodeOption\Honeywell\OptionUpcEanDialog.Designer.cs">
+      <DependentUpon>OptionUpcEanDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\BarcodeOption\Zebra\Option2DSymbolsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\BarcodeOption\Zebra\Option2DSymbolsDialog.designer.cs">
+      <DependentUpon>Option2DSymbolsDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\BarcodeOption\Zebra\OptionCodabarDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\BarcodeOption\Zebra\OptionCodabarDialog.designer.cs">
+      <DependentUpon>OptionCodabarDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\BarcodeOption\Zebra\OptionCode11Dialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\BarcodeOption\Zebra\OptionCode11Dialog.designer.cs">
+      <DependentUpon>OptionCode11Dialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\BarcodeOption\Zebra\OptionCode128Dialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\BarcodeOption\Zebra\OptionCode128Dialog.designer.cs">
+      <DependentUpon>OptionCode128Dialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\BarcodeOption\Zebra\OptionCode39Dialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\BarcodeOption\Zebra\OptionCode39Dialog.designer.cs">
+      <DependentUpon>OptionCode39Dialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\BarcodeOption\Zebra\OptionCode93Dialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\BarcodeOption\Zebra\OptionCode93Dialog.designer.cs">
+      <DependentUpon>OptionCode93Dialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\BarcodeOption\Zebra\OptionCompositeDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\BarcodeOption\Zebra\OptionCompositeDialog.designer.cs">
+      <DependentUpon>OptionCompositeDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\BarcodeOption\Zebra\OptionEnableOnlyDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\BarcodeOption\Zebra\OptionEnableOnlyDialog.designer.cs">
+      <DependentUpon>OptionEnableOnlyDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\BarcodeOption\Zebra\OptionGeneralDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\BarcodeOption\Zebra\OptionGeneralDialog.Designer.cs">
+      <DependentUpon>OptionGeneralDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\BarcodeOption\Zebra\OptionGs1DatabarDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\BarcodeOption\Zebra\OptionGs1DatabarDialog.Designer.cs">
+      <DependentUpon>OptionGs1DatabarDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\BarcodeOption\Zebra\OptionI2of5Dialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\BarcodeOption\Zebra\OptionI2of5Dialog.Designer.cs">
+      <DependentUpon>OptionI2of5Dialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\BarcodeOption\Zebra\OptionM2of5Dialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\BarcodeOption\Zebra\OptionM2of5Dialog.Designer.cs">
+      <DependentUpon>OptionM2of5Dialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\BarcodeOption\Zebra\OptionMsiDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\BarcodeOption\Zebra\OptionMsiDialog.Designer.cs">
+      <DependentUpon>OptionMsiDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\BarcodeOption\Zebra\OptionPostalDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\BarcodeOption\Zebra\OptionPostalDialog.Designer.cs">
+      <DependentUpon>OptionPostalDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\BarcodeOption\Zebra\OptionUpcEanDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\BarcodeOption\Zebra\OptionUpcEanDialog.Designer.cs">
+      <DependentUpon>OptionUpcEanDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\ChannelFrequencies.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\ChannelFrequencies.Designer.cs">
+      <DependentUpon>ChannelFrequencies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\QValue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\QValue.Designer.cs">
+      <DependentUpon>QValue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\SymbolState.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\SymbolState.Designer.cs">
+      <DependentUpon>SymbolState.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\TimeSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\TimeSet.Designer.cs">
+      <DependentUpon>TimeSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helper.cs" />
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main.EventHandler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mask.Designer.cs">
+      <DependentUpon>Mask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mask.EventHandler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Option.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Option.Designer.cs">
+      <DependentUpon>Option.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Option.EventHandler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Access.resx">
+      <DependentUpon>Access.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\BarcodeOption\GeneralOption.resx">
+      <DependentUpon>GeneralOption.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\BarcodeOption\Honeywell\OptionCodabarDialog.resx">
+      <DependentUpon>OptionCodabarDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\BarcodeOption\Honeywell\OptionCode128Dialog.resx">
+      <DependentUpon>OptionCode128Dialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\BarcodeOption\Honeywell\OptionCode39Dialog.resx">
+      <DependentUpon>OptionCode39Dialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\BarcodeOption\Honeywell\OptionCode93Dialog.resx">
+      <DependentUpon>OptionCode93Dialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\BarcodeOption\Honeywell\OptionCompositeDialog.resx">
+      <DependentUpon>OptionCompositeDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\BarcodeOption\Honeywell\OptionI2of5Dialog.resx">
+      <DependentUpon>OptionI2of5Dialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\BarcodeOption\Honeywell\OptionPdf417Dialog.resx">
+      <DependentUpon>OptionPdf417Dialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\BarcodeOption\Honeywell\OptionPostalCodeDialog.resx">
+      <DependentUpon>OptionPostalCodeDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\BarcodeOption\Honeywell\OptionUpcEanDialog.resx">
+      <DependentUpon>OptionUpcEanDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\BarcodeOption\Zebra\Option2DSymbolsDialog.resx">
+      <DependentUpon>Option2DSymbolsDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\BarcodeOption\Zebra\OptionCodabarDialog.resx">
+      <DependentUpon>OptionCodabarDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\BarcodeOption\Zebra\OptionCode11Dialog.resx">
+      <DependentUpon>OptionCode11Dialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\BarcodeOption\Zebra\OptionCode128Dialog.resx">
+      <DependentUpon>OptionCode128Dialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\BarcodeOption\Zebra\OptionCode39Dialog.resx">
+      <DependentUpon>OptionCode39Dialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\BarcodeOption\Zebra\OptionCode93Dialog.resx">
+      <DependentUpon>OptionCode93Dialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\BarcodeOption\Zebra\OptionCompositeDialog.resx">
+      <DependentUpon>OptionCompositeDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\BarcodeOption\Zebra\OptionEnableOnlyDialog.resx">
+      <DependentUpon>OptionEnableOnlyDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\BarcodeOption\Zebra\OptionGeneralDialog.resx">
+      <DependentUpon>OptionGeneralDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\BarcodeOption\Zebra\OptionGs1DatabarDialog.resx">
+      <DependentUpon>OptionGs1DatabarDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\BarcodeOption\Zebra\OptionI2of5Dialog.resx">
+      <DependentUpon>OptionI2of5Dialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\BarcodeOption\Zebra\OptionM2of5Dialog.resx">
+      <DependentUpon>OptionM2of5Dialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\BarcodeOption\Zebra\OptionMsiDialog.resx">
+      <DependentUpon>OptionMsiDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\BarcodeOption\Zebra\OptionPostalDialog.resx">
+      <DependentUpon>OptionPostalDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\BarcodeOption\Zebra\OptionUpcEanDialog.resx">
+      <DependentUpon>OptionUpcEanDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\ChannelFrequencies.resx">
+      <DependentUpon>ChannelFrequencies.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\QValue.resx">
+      <DependentUpon>QValue.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\SymbolState.resx">
+      <DependentUpon>SymbolState.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\TimeSet.resx">
+      <DependentUpon>TimeSet.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mask.resx">
+      <DependentUpon>Mask.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Option.resx">
+      <DependentUpon>Option.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectMaskItemDlg.resx">
+      <DependentUpon>SelectMaskItemDlg.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StoredData.resx">
+      <DependentUpon>StoredData.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="SelectMaskItemDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectMaskItemDlg.Designer.cs">
+      <DependentUpon>SelectMaskItemDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StoredData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StoredData.Designer.cs">
+      <DependentUpon>StoredData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StoredData.EventHandler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
